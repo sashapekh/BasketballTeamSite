@@ -1,0 +1,189 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <title>bootstrap lesson</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mystyle/main.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'main.views.main' %}">Chicago bulls</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <img class="ofc" src="{% static 'mystyle/img/Chicago_Bulls_logo.png' %}" alt="Generic placeholder image" width="300" height="350" data-toggle="modal" data-target="#myModal1">
+
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Chicago bulls</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img src={% static 'mystyle/img/Chicago_Bulls_logo.png' %} width="300" height="350" class="text-center">
+                            <p>Chicago bulls</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="center">Chicago bulls</h1>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <img class="ofc" src={% static 'mystyle/img/Chicago_Bulls_logo.png' %} alt="Generic placeholder image" width="300" height="350" data-toggle="modal" data-target="#myModal2">
+
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Chicago bulls</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img src={% static 'mystyle/img/Chicago_Bulls_logo.png' %} width="300" height="350" class="text-center">
+                            <p>Chicago bulls</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="center">Chicago bulls</h1>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <img class="ofc" src={% static 'mystyle/img/Chicago_Bulls_logo.png' %} alt="Generic placeholder image" width="300" height="350" data-toggle="modal" data-target="#myModal3">
+
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Chicago bulls</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img src={% static 'mystyle/img/Chicago_Bulls_logo.png' %} width="300" height="350" class="text-center">
+                            <p>Chicago bulls</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="center">Chicago bulls</h1>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <img class="ofc" src={% static 'mystyle/img/michael-jordan-02.jpg' %} alt="Generic placeholder image" width="300" height="500" data-toggle="modal" data-target="#myModal4">
+
+            <div class="modal fade" id="myModal4" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Chicago bulls</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img src={% static 'mystyle/img/michael-jordan-02.jpg' %} width="300" height="500" class="text-center">
+                            <h2>Michael Jordan</h2>
+                            <p>Drafted as the third overall pick in the 1984 draft, His Airness immediately went to work eviscerating the competition,
+                                averaging 28 points, 7 rebounds, and 6 assists per game as a rookie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="center">Michael Jordan</h1>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <img class="ofc" src={% static 'mystyle/img/ScottiePippen.jpg' %} alt="Generic placeholder image" width="300" height="500" data-toggle="modal" data-target="#myModal5">
+
+            <div class="modal fade" id="myModal5" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Chicago bulls</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img src={% static 'mystyle/img/ScottiePippen.jpg' %} width="300" height="500" class="text-center">
+                            <h2>Scottie Pippen</h2>
+                            <p>Scottie Pippen, in his own right, was one of the greatest all-around performers to play the game of basketball,
+                                posting averages of 18 points, 7 rebounds, 5 assists, and 2 steals per game through 12 years of service with the Chicago Bulls.
+                                As an individual performer, Scottie went off for his best season in 1994, racking up 22 points, 9 rebounds,
+                                6 assists, and 3 steals per contest, leading the Bulls to the Eastern Conference semifinals while Jordan enjoyed his first retirement and
+                                pursued a short-lived baseball career.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="center">Scottie Pippen</h1>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <img class="ofc" src={% static 'mystyle/img/joaalam0ttfpyhyxerk1.jpg' %} alt="Generic placeholder image" width="300" height="500" data-toggle="modal" data-target="#myModal6">
+
+            <div class="modal fade" id="myModal6" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel6">Chicago bulls</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img src={% static 'mystyle/img/joaalam0ttfpyhyxerk1.jpg' %} width="300" height="500" class="text-center">
+                            <h2>Derrick Rose</h2>
+                            <p>In 2008, the Bulls drafted South Side schoolboy legend Derrick Rose with the first overall pick in what appeared to be the beginning of a storybook career. Shortly thereafter,
+                                the hometown hero in the making received Rookie of the Year honors, posting 17 points,
+                                4 rebounds, and 6 assists per game. By his third year in the league, Rose had added a serviceable midrange jump shot to his game and was all but unstoppable. In 2011,
+                                Rose took home MVP honors, becoming the youngest player to win the award, at just 22.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="center">Derrick Rose</h1>
+        </div>
+    </div>
+
+    <footer>
+        <p>© Pekh Alexander</p>
+    </footer>
+
+</div>
+
+
+
+
+</body>
+</html>

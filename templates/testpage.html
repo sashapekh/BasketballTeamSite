@@ -1,0 +1,91 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <title>bootstrap lesson</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mystyle/main.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'main.views.main' %}">Chicago bulls</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+<div class="container">
+    <div class="row">
+        {% for image in images %}
+            <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <img class="ofc" src="{{ image.img_src }}" alt="Generic placeholder image" width="200" height="250" data-toggle="modal" data-target="#myModal{{ image.id }}">
+
+                <div class="modal fade" id="myModal{{ image.id }}" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">{{ image.img_name }}</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <img src='{{ image.img_src }}' width="300" height="350" class="text-center">
+                                <p>{{ image.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        <div class="pagination">
+            <span class="step-links">
+                {% if images.has_previous %}
+                    <a href="?page={{ images.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ images.number }} 
+                </span>
+            
+                {% if images.has_next %}
+                    <a href="?page={{ images.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row text-center">
+    <footer>
+        <p>© Pekh Alexander</p>
+    </footer>
+    </div>
+
+
+
+
+
+</body>
+</html>
