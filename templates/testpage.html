@@ -55,22 +55,25 @@
         {% endfor %}
     </div>
 
-    <div class="row">
-        <div class="pagination">
-            <span class="step-links">
-                {% if images.has_previous %}
-                    <a href="?page={{ images.previous_page_number }}">previous</a>
-                {% endif %}
 
-                <span class="current">
-                    Page {{ images.number }} 
-                </span>
-            
-                {% if images.has_next %}
-                    <a href="?page={{ images.next_page_number }}">next</a>
-                {% endif %}
-            </span>
-        </div>
+
+    <div class="row text-center">
+        <ul class="pagination">
+            {% if images.has_previous %}
+             <li><a href="?page={{ images.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li><a href="">&laquo;</a></li>
+            {% endif %}
+            <li><a href="?page=1">1</a></li>
+            <li><a href="?page=2">2</a></li>
+            <li><a href="?page=3">3</a></li>
+            {% if images.has_next %}
+                <li><a href="?page={{ images.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li><a href="">&raquo;</a></li>
+            {% endif %}
+
+        </ul>
     </div>
 
 
