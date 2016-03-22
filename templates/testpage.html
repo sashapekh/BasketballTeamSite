@@ -74,7 +74,11 @@
             {% endif %}
 
         </ul>
+        {% for image in images.p.page_range %}
+            <h1>{{ image.number }}</h1>
+        {% endfor %}
     </div>
+
 
 
 
