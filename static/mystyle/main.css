@@ -26,3 +26,10 @@ nav  a.navbar-brand:hover {
 .container .row .bulls-team img.ofc:hover {
     opacity: 1;
 }
+.col-lg-12 form div.email-div {
+    margin-left:-40px;
+}
+div.row footer {
+    margin-top:50px;
+
+}
