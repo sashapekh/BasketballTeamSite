@@ -31,55 +31,68 @@
     </nav>
 
 <div class="container">
+    {% if errors %}
+        <script>
+            $(document).ready(function(){
+
+            })
+        </script>
+        {% endif %}
+
     <div class="row">
-        {% for image in images %}
-            <div class="col-lg-4 col-sm-4 text-center bulls-team">
-            <img class="ofc" src="{{ image.img_src }}" alt="Generic placeholder image" width="200" height="250" data-toggle="modal" data-target="#myModal{{ image.id }}">
+        <div class="col-md-12 text-center">
+            <form action="" method="post" role="form" class="form-horizontal">
 
-                <div class="modal fade" id="myModal{{ image.id }}" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">{{ image.img_name }}</h4>
-                            </div>
+                <!-- Блок для ввода имени -->
+                 <div class="form-group has-feedback">
+                     <label for="name" class="control-label col-xs-3">Name:</label>
+                     <div class="col-xs-3">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                             <label>
+                                 <input type="text" class="form-control" required="required" name="name" value="{{ form.name }}">
+                             </label>
+                         </div>
+                         <span class="glyphicon form-control-feedback"></span>
+                     </div>
+                 </div>
+                 <!-- конец блока для ввода имени -->
 
-                            <div class="modal-body">
-                                <img src='{{ image.img_src }}' width="300" height="350" class="text-center">
-                                <p>{{ image.description}}</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Блок для ввода email -->
+                <div class="form-group has-feedback">
+                     <label for="name" class="control-label col-xs-3">Mail:</label>
+                     <div class="col-xs-3">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                             <label>
+                                 <input type="text" class="form-control" required="required" name="email" value="{{ form.email }}">
+                             </label>
+                         </div>
+                         <span class="glyphicon form-control-feedback"></span>
+                     </div>
+                 </div>
+                <!-- конец блока для ввода email -->
+
+                {# Блок ввода текста #}
+                <div class="form-group has-feedback">
+                     <label for="name" class="control-label col-xs-3">Name:</label>
+                     <div class="col-xs-3">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
+                             <label>
+                                 <textarea class="form-control" name="message" id="" cols="30" rows="10">{{ form.message }}</textarea>
+                             </label>
+                         </div>
+                         <span class="glyphicon form-control-feedback"></span>
+                     </div>
+                 </div>
+                <div class="col-md-6">
+                    <button id="save" style="margin-left:350px;" type="submit" class="btn btn-success text-center">Submit</button>
                 </div>
-            </div>
-        {% endfor %}
+                {% csrf_token %}
+            </form>
+        </div>
     </div>
-
-
-
-    <div class="row text-center">
-        <ul class="pagination">
-            {% if images.has_previous %}
-             <li><a href="?page={{ images.previous_page_number }}">&laquo;</a></li>
-                {% else %}
-                    <li><a href="">&laquo;</a></li>
-            {% endif %}
-            <li><a href="?page=1">1</a></li>
-            <li><a href="?page=2">2</a></li>
-            <li><a href="?page=3">3</a></li>
-            {% if images.has_next %}
-                <li><a href="?page={{ images.next_page_number }}">&raquo;</a></li>
-                {% else %}
-                    <li><a href="">&raquo;</a></li>
-            {% endif %}
-
-        </ul>
-        {% for image in images.p.page_range %}
-            <h1>{{ image.number }}</h1>
-        {% endfor %}
-    </div>
-
-
 
 
 
@@ -90,7 +103,7 @@
     </footer>
     </div>
 
-
+</div>
 
 
 

@@ -25,13 +25,14 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
+                <li><a href="{% url 'main.views.form_view' %}">Forms</a></li>
 
             </ul>
         </div>
     </nav>
 
 <div class="container">
-    <div class="row">
+    <div class="row ">
 
     <!-- Begin carousel -->
 
@@ -80,7 +81,7 @@
 
     <!-- Finish carousel -->
         {% for image in images %}
-            <div class="col-lg-4 col-sm-4 text-center bulls-team">
+            <div class="col-lg-4 col-sm-4 col-sm-offset-2 col-xs-12    text-center bulls-team">
             <img class="ofc" src="{{ image.img_src }}" alt="Generic placeholder image" width="200" height="250" data-toggle="modal" data-target="#myModal{{ image.id }}">
 
                 <div class="modal fade" id="myModal{{ image.id }}" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">

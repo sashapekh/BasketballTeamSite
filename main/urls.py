@@ -5,5 +5,6 @@ urlpatterns = [
     url(r'^$', views.main ),
     url(r'^test/$', views.test_main),
     url(r'^page/(\d+)/$', views.test_main),
-    url(r'^form/$', views.form_view)
+    url(r'^form/$', views.form_view),
+
 ]

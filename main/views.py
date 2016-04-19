@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from .models import ImagesLogo
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.views.generic import FormView
+from main.forms import SimpleForm
+
 
 
 # Create your views here.
@@ -34,20 +37,16 @@ def test_main(request):
 
 
 def form_view(request):
-    errors = []
-    form = {}
+    name = ''
     if request.POST:
-        form['name'] = request.POST.get('name')
-        form['email'] = request.POST.get('email')
-        form['message'] = request.POST.get('message')
 
-        if not form['name']:
-            errors.append('Заполните Имя')
-        if '@' not in form['email']:
-            errors.append('Введите корректный email')
-        if not form['message']:
-            errors.append('Введите Сообщение')
-        if not errors:
-            print(form)
-            return HttpResponse('Спасибо за ваше сообщение!')
-    return render(request, 'forms.html', {'errors': errors, 'form': form})
+        form = SimpleForm(request.POST)
+
+        if form.is_valid():
+            name = form.cleaned_data['username']
+            print(type(form))
+
+    else:
+        form = SimpleForm()
+
+    return render(request,'forms.html', {'form': form , 'name':name})
